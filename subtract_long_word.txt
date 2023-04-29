@@ -1,0 +1,65 @@
+Loop, CLA
+LDA B_PTR I
+CMA 
+INC
+ADD CarryB
+STA B_PTR I
+
+CLA
+SZE
+INC
+STA CarryB
+CLE
+
+LDA A_PTR I
+ADD B_PTR I
+STA C_PTR I
+CLA
+SZE
+INC
+SZE
+STA Carry
+CLE
+
+LDA C_PTR I
+ADD Carry
+STA C_PTR I
+CLA
+SZE
+INC
+SZE
+STA Carry
+CLE
+
+ISZ A_PTR 
+ISZ B_PTR
+ISZ C_PTR
+
+ISZ Counter
+BUN Loop
+HLT
+
+
+
+CarryB, 0
+Carry, 0
+ORG 1024
+A_PTR, Dec 1028
+B_PTR, Dec 1032
+C_PTR, Dec 1036
+Dec 0
+A, HEX FFFF
+Dec 0
+Dec 0
+Dec 0
+B, HEX FFFF
+Dec 0
+Dec 0
+Dec 0
+C, HEX 0
+Dec 0
+Dec 0
+Dec 0
+
+Counter, -4
+END

@@ -1,0 +1,86 @@
+multiplication, cle
+cla
+
+lda B3
+cir
+sta B3
+lda B2
+cir
+sta B2
+lda B1
+cir
+sta B1
+lda B0
+cir
+sta B0
+
+
+sze
+bun add
+bun loopleft ;done
+
+add, cla
+
+lda A0
+add C0
+sta C0
+
+lda A1
+sze
+add one
+add C1
+sta C1
+
+lda A2
+sze
+add one
+add C2
+sta C2
+
+lda A3
+sze
+add one
+add C3
+sta C3
+
+loopleft, cle ; done
+lda A0
+cil
+sta A0
+lda A1
+cil
+sta A1
+lda A2
+cil
+sta A2
+lda A3
+cil
+sta A3
+
+cla
+lda ctr
+add one 
+sta ctr 
+
+sza
+bun multiplication
+hlt
+one, 1
+ctr, -32
+
+ORG 1024
+
+A0, Hex 1234 ;1024
+A1, Hex 4321
+A2, Hex 0 
+A3, Hex 0 
+
+B0, Hex 123 ;1028
+B1, Hex 4321
+B2, Hex 0 
+B3, Hex 0 
+
+C0, Hex 0 ;1032
+C1, Hex 0
+C2, Hex 0
+C3, Hex 0
